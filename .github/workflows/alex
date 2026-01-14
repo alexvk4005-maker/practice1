@@ -1,8 +1,5 @@
 
 
-
-  push:
-
 jobs:
   hello:
     runs-on: ubuntu-latest
