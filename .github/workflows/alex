@@ -1,5 +1,4 @@
 
-name: First Test
 
 on:
   push:
