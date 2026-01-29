@@ -1,0 +1,23 @@
+
+name: Docker CI with Apache
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apache-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: |
+        docker build -t apache-app:v1 .
+
+    - name: Run Apache container
+      run: |
+        docker run -d -p 8080:80 apache-app:v1
